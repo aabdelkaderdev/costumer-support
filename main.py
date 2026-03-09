@@ -36,9 +36,6 @@ def main():
     
     with st.sidebar:
         st.header("Configuration")
-        #groq_api_key = st.text_input("GROQ API Key", type="password")
-        #if groq_api_key:
-            #os.environ["GROQ_API_KEY"] = groq_api_key
             
         st.header("System Setup")
         st.info("Upload documents to build specialized product knowledge bases. Include 'cloud', 'hardware', or 'software' in the filename to automatically categorize them into distinct knowledge bases.")
@@ -48,8 +45,6 @@ def main():
         if st.button("Initialize System"):
             if not uploaded_files:
                 st.error("Please upload documents first.")
-            elif not groq_api_key:
-                st.error("Please provide your GROQ API Key.")
             else:
                 with st.spinner("Processing documents and configuring the system..."):
                     doc_processor = DocumentProcessor()
